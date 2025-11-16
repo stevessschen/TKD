@@ -1,3 +1,39 @@
+root@m8cpqd23301-1760604606377-54ffc55677-fpr2z:/home/data# mkdir test4
+root@m8cpqd23301-1760604606377-54ffc55677-fpr2z:/home/data# cd test4
+root@m8cpqd23301-1760604606377-54ffc55677-fpr2z:/home/data/test4# git clone https://github.com/stevessschen/TKD.git
+Cloning into 'TKD'...
+remote: Enumerating objects: 74, done.
+remote: Counting objects: 100% (74/74), done.
+remote: Compressing objects: 100% (65/65), done.
+remote: Total 74 (delta 24), reused 0 (delta 0), pack-reused 0 (from 0)
+Receiving objects: 100% (74/74), 41.48 KiB | 1.12 MiB/s, done.
+Resolving deltas: 100% (24/24), done.
+root@m8cpqd23301-1760604606377-54ffc55677-fpr2z:/home/data/test4# cd TKD
+root@m8cpqd23301-1760604606377-54ffc55677-fpr2z:/home/data/test4/TKD# pip install -r requirements.txt
+Requirement already satisfied: numba==0.62.1 in /usr/local/lib/python3.10/dist-packages (from -r requirements.txt (line 1)) (0.62.1)
+Requirement already satisfied: numpy==1.26.4 in /usr/local/lib/python3.10/dist-packages (from -r requirements.txt (line 2)) (1.26.4)
+Requirement already satisfied: pandas==2.2.1 in /usr/local/lib/python3.10/dist-packages (from -r requirements.txt (line 3)) (2.2.1)
+Requirement already satisfied: scikit-learn==1.7.2 in /usr/local/lib/python3.10/dist-packages (from -r requirements.txt (line 4)) (1.7.2)
+Requirement already satisfied: scipy==1.15.3 in /usr/local/lib/python3.10/dist-packages (from -r requirements.txt (line 5)) (1.15.3)
+Requirement already satisfied: torch==2.1.0+cpu in /usr/local/lib/python3.10/dist-packages (from -r requirements.txt (line 6)) (2.1.0+cpu)
+Requirement already satisfied: tqdm==4.67.1 in /usr/local/lib/python3.10/dist-packages (from -r requirements.txt (line 7)) (4.67.1)
+Requirement already satisfied: llvmlite<0.46,>=0.45.0dev0 in /usr/local/lib/python3.10/dist-packages (from numba==0.62.1->-r requirements.txt (line 1)) (0.45.1)
+Requirement already satisfied: python-dateutil>=2.8.2 in /usr/local/lib/python3.10/dist-packages (from pandas==2.2.1->-r requirements.txt (line 3)) (2.9.0.post0)
+Requirement already satisfied: pytz>=2020.1 in /usr/local/lib/python3.10/dist-packages (from pandas==2.2.1->-r requirements.txt (line 3)) (2025.2)
+Requirement already satisfied: tzdata>=2022.7 in /usr/local/lib/python3.10/dist-packages (from pandas==2.2.1->-r requirements.txt (line 3)) (2025.2)
+Requirement already satisfied: joblib>=1.2.0 in /usr/local/lib/python3.10/dist-packages (from scikit-learn==1.7.2->-r requirements.txt (line 4)) (1.5.2)
+Requirement already satisfied: threadpoolctl>=3.1.0 in /usr/local/lib/python3.10/dist-packages (from scikit-learn==1.7.2->-r requirements.txt (line 4)) (3.6.0)
+Requirement already satisfied: filelock in /usr/local/lib/python3.10/dist-packages (from torch==2.1.0+cpu->-r requirements.txt (line 6)) (3.20.0)
+Requirement already satisfied: typing-extensions in /usr/local/lib/python3.10/dist-packages (from torch==2.1.0+cpu->-r requirements.txt (line 6)) (4.11.0)
+Requirement already satisfied: sympy in /usr/local/lib/python3.10/dist-packages (from torch==2.1.0+cpu->-r requirements.txt (line 6)) (1.14.0)
+Requirement already satisfied: networkx in /usr/local/lib/python3.10/dist-packages (from torch==2.1.0+cpu->-r requirements.txt (line 6)) (3.4.2)
+Requirement already satisfied: jinja2 in /usr/local/lib/python3.10/dist-packages (from torch==2.1.0+cpu->-r requirements.txt (line 6)) (3.1.6)
+Requirement already satisfied: fsspec in /usr/local/lib/python3.10/dist-packages (from torch==2.1.0+cpu->-r requirements.txt (line 6)) (2025.10.0)
+Requirement already satisfied: six>=1.5 in /usr/local/lib/python3.10/dist-packages (from python-dateutil>=2.8.2->pandas==2.2.1->-r requirements.txt (line 3)) (1.16.0)
+Requirement already satisfied: MarkupSafe>=2.0 in /usr/local/lib/python3.10/dist-packages (from jinja2->torch==2.1.0+cpu->-r requirements.txt (line 6)) (2.1.5)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in /usr/local/lib/python3.10/dist-packages (from sympy->torch==2.1.0+cpu->-r requirements.txt (line 6)) (1.3.0)
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+root@m8cpqd23301-1760604606377-54ffc55677-fpr2z:/home/data/test4/TKD# python3 main.py
 ✓ 套件載入完成
 PyTorch版本: 2.1.0+cpu
 CUDA可用: False
@@ -20,7 +56,7 @@ CUDA可用: False
   階段 1: 數據載入
 ======================================================================
 
-載入交易數據: ./dataset/acct_transaction.csv
+載入交易數據: /home/data/dataset/acct_transaction.csv
   ✓ 載入 4,435,890 筆交易
   ✓ 交易日期範圍: day 1 - day 121
 
@@ -46,7 +82,7 @@ CUDA可用: False
   [2/3] Numba 加速計算中...
   [3/3] 計算派生特徵...
   ✓ 時序窗口特徵形狀: (1800106, 6)
-  ⚡ 執行時間: 3.0 秒 (加速版)
+  ⚡ 執行時間: 2.9 秒 (加速版)
 [特徵5/5] 構建圖結構...
   ✓ 圖邊數: 4,274,300
   計算PageRank...
@@ -94,13 +130,13 @@ CUDA可用: False
 ======================================================================
 
 開始訓練...
-Training:  83%|████████▎ | 124/150 [30:46<06:27, 14.89s/it, loss=1.363, val_F1=0.869, val_P=0.944, val_R=0.805]
-
-  ✓ Early stopping at epoch 125
+Training:  32%|██████▋              | 48/150 [07:08<14:24,  8.48s/it, loss=1.515, vTraining:  33%|██████▊              | 49/150 [07:16<14:06,  8.38s/it, loss=1.515, vTraining:  33%|██████▊              | 49/150 [07:27<14:06,  8.38s/it, loss=1.483, vTraining:  33%|███████              | 50/150 [07:27<14:59,  8.99s/it, loss=1.483, vTraining:  34%|███████▏             | 51/150 [07:35<14:17,  8.67s/it, loss=1.483, vTraining:  35%|███████▎             | 52/150 [07:43<14:03,  8.61s/it, loss=1.483, vTraining:  35%|███████▍             | 53/150 [07:51<13:36,  8.42s/it, loss=1.483, vTraining:  36%|███████▌             | 54/150 [08:03<15:08,  9.47s/it, loss=1.483, vTraining:  36%|███████▌             | 54/150 [08:14<15:08,  9.47s/it, loss=1.486, vTraining:  37%|███████▋             | 55/150 [08:14<15:35,  9.85s/it, loss=1.486, vTraining:  37%|███████▊             | 56/150 [08:22<14:31,  9.27s/it, loss=1.486, vTraining:  38%|███████▉             | 57/150 [08:30<13:48,  8.91s/it, loss=1.486, vTraining:  86%|█████████████████▏  | 129/150 [19:17<02:55,  8.35s/it, loss=1.339, val_F1=0.885, val_P=0.920, val_R=0.853]
+  ✓ Early stopping at epoch 130
+Training:  86%|█████████████████▏  | 129/150 [19:17<03:08,  8.97s/it, loss=1.339, val_F1=0.885, val_P=0.920, val_R=0.853]
 
   尋找最佳閾值...
-  ✓ 最佳驗證F1=0.9027 @ epoch 95
-  ✓ 最佳閾值=0.45, 使用該閾值的F1=0.8954
+  ✓ 最佳驗證F1=0.8964 @ epoch 100
+  ✓ 最佳閾值=0.45, 使用該閾值的F1=0.8918
 
 ✓ 訓練完成！
 
@@ -109,9 +145,9 @@ Training:  83%|████████▎ | 124/150 [30:46<06:27, 14.89s/it, lo
 ======================================================================
 
 最終驗證集結果 (閾值=0.45):
-  Precision: 0.9126
-  Recall: 0.8789
-  F1 Score: 0.8954
+  Precision: 0.8737
+  Recall: 0.9105
+  F1 Score: 0.8918
 
 ======================================================================
   階段 6: 預測
@@ -121,12 +157,12 @@ Training:  83%|████████▎ | 124/150 [30:46<06:27, 14.89s/it, lo
 ✓ 預測結果已儲存至: ./output/predictions_plan1_temporal.csv
 
 預測統計:
-  預測為異常: 470 (9.83%)
+  預測為異常: 572 (11.97%)
 
 ======================================================================
   🎯 第1次方案執行完成！
 ======================================================================
-驗證集F1: 0.8954
+驗證集F1: 0.8918
 最佳閾值: 0.45
 輸出檔案: ./output/predictions_plan1_temporal.csv
 
@@ -138,3 +174,5 @@ Training:  83%|████████▎ | 124/150 [30:46<06:27, 14.89s/it, lo
   5. 金額變化率 (抓住突然大額)
   6. 最後交易日 (越接近day 121越可疑)
 ======================================================================
+root@m8cpqd23301-1760604606377-54ffc55677-fpr2z:/home/data/test4/TKD# ^C
+root@m8cpqd23301-1760604606377-54ffc55677-fpr2z:/home/data/test4/TKD# 
