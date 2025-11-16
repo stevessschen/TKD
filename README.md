@@ -39,7 +39,7 @@ Python 3.10.12
 
 3. ** 執行程式 ** => python main.py (在cpu環境下執行約30分鐘)
 
-4. 程式執行過程，請查看檔案：running_precesses_record.txt
+4. 程式執行過程，請查看檔案：程式執行過程.txt
 
 5. 預測結果將會儲存於 ./output/predictions_plan1_temporal.csv
 ---
