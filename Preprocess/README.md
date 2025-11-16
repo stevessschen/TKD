@@ -23,3 +23,14 @@ compute_pagerank() - PageRank計算
 normalize_adj() - GCN正規化
 
 build_all_features() - 完整流程整
+
+## 突顯競賽關鍵創新
+### 特別強調：
+
+⭐ 時序窗口分析 (早期 vs 晚期行為) - F1 從 0.277 → 0.34
+
+⭐ Hard Negative Mining - 改善模型泛化能力
+
+⭐ Focal Loss - 處理嚴重類別不平衡
+
+⭐ Numba加速 - 30分鐘 → 2分鐘 (15-20x speedup)
