@@ -58,11 +58,11 @@ print(f"CUDA可用: {torch.cuda.is_available()}")
 # Cell 2: 參數設定（保持F1-0.277的成功參數）
 # ============================================================================
 
-TRAIN_CSV = './dataset/acct_transaction-150000.csv'
+TRAIN_CSV = './dataset/acct_transaction.csv'
 ALERT_CSV = './dataset/acct_alert.csv'
 PREDICT_CSV = './dataset/acct_predict.csv'
-OUTPUT_CSV = './output/predictions_plan1_temporal_try_py.csv'
-CHECKPOINT_DIR = './checkpoints_plan1_try_py'
+OUTPUT_CSV = './output/predictions_plan1_temporal.csv'
+CHECKPOINT_DIR = './checkpoints_plan1'
 
 # === 模型參數（F1-0.277的成功配置）===
 HIDDEN_DIMS = [128, 64, 32, 16]  # GCN layer dimensions
@@ -239,4 +239,5 @@ print(f"  3. 頻率變化率 (抓住突然活躍)")
 print(f"  4. 晚期平均金額")
 print(f"  5. 金額變化率 (抓住突然大額)")
 print(f"  6. 最後交易日 (越接近day 121越可疑)")
+
 print("="*70)
