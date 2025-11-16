@@ -270,14 +270,14 @@ def sparse_to_torch(sparse_mx):
     return torch.sparse_coo_tensor(indices, values, shape)
 
 def train_model(features, adj, adj_norm, train_idx, train_y, val_idx, val_y, config, seed=42):
-"""使用多目標損失函數和早停法訓練 GCN-VAE 模型。
-達成完整的訓練流程：
-1. 初始化模型與優化器
-2. 使用重建損失函數 + KL 損失函數 + 分類損失函數進行訓練
-3. 每 5 個 epoch 在驗證集上進行評估
-4. 耐心早停
-5. 尋找最優分類閾值
-"""
+    """使用多目標損失函數和早停法訓練 GCN-VAE 模型。
+    達成完整的訓練流程：
+    1. 初始化模型與優化器
+    2. 使用重建損失函數 + KL 損失函數 + 分類損失函數進行訓練
+    3. 每 5 個 epoch 在驗證集上進行評估
+    4. 耐心早停
+    5. 尋找最優分類閾值
+    """
     print(f"\n{'='*70}")
     print(f"  訓練模型 (seed={seed})")
     print(f"{'='*70}")
