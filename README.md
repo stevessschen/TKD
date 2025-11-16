@@ -30,18 +30,23 @@ project/
 ```
 ## 使用方式
 Python 3.10.12
-1. ** 安裝套件 ** => pip install -r requirements.txt
 
-2. ** 準備資料 ** 請將以下三個CSV檔案放在 ./database/ 
+1. git clone https://github.com/stevessschen/TKD.git
+   
+2. cd TKD
+
+3. ** 安裝套件 ** => pip install -r requirements.txt
+
+4. ** 準備資料 ** 請將以下三個CSV檔案放在 ./database/ 
 - acct_transaction.csv
 - acct_alert.csv
 - acct_predict.csv
 
-3. ** 執行程式 ** => python main.py (在cpu環境下執行約30分鐘)
+5. ** 執行程式 ** => python main.py (在cpu環境下執行約30分鐘)
 
-4. 程式執行過程，請查看檔案：程式執行過程.txt
+6. 程式執行過程紀錄，請查看檔案：程式執行過程.txt
 
-5. 預測結果將會儲存於 ./output/predictions_plan1_temporal.csv
+7. 預測結果將會儲存於 ./output/predictions_plan1_temporal.csv
 ---
 
 ## 資料分析與預處理
