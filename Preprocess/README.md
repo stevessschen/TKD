@@ -1,4 +1,4 @@
-# data_preprocess.py - 特徵工程模組
+# data_preprocess.py - 特徵工程模組（27 維特徵提取）
 
 12個函數，包括：
 
