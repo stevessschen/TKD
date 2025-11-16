@@ -37,9 +37,11 @@ Python 3.10.12
 - acct_alert.csv
 - acct_predict.csv
 
-3. ** 執行程式 ** => python main.py
+3. ** 執行程式 ** => python main.py (在cpu環境下執行約30分鐘)
 
-4. 預測結果將會儲存於 ./output/predictions_plan1_temporal.csv
+4. 程式執行過程，請查看檔案：running_precesses_record.txt
+
+5. 預測結果將會儲存於 ./output/predictions_plan1_temporal.csv
 ---
 
 ## 資料分析與預處理
