@@ -28,7 +28,18 @@ project/
 └── output/
     └── predictions_plan1_temporal.csv  # 預測結果（F1 0.34）
 ```
+## 使用方式
+Python 3.10.12
+1. ** 安裝套件 ** => pip install -r requirements.txt
 
+2. ** 準備資料 ** 請將以下三個CSV檔案放在 ./database/ 
+- acct_transaction.csv
+- acct_alert.csv
+- acct_predict.csv
+
+3. ** 執行程式 ** => python main.py
+
+4. 預測結果將會儲存於 ./output/predictions_plan1_temporal.csv
 ---
 
 ## 資料分析與預處理
